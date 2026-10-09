@@ -1,0 +1,558 @@
+/* ==========================================================================
+   BBC ACADEMY - MINIMALIST & PROFESSIONAL STYLESHEET
+   Neutral Dark Theme. Bottom-left hero layout. White certifications ticker.
+   Zero emojis. Zero button hover pop-ups. Zero bluish hues.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
+/* --- Design Tokens (Pure Neutral Dark / Monochrome) --- */
+:root {
+  --color-bg: #000000;
+  --color-header: rgba(10, 10, 10, 0.92);
+  --color-surface: #121212;
+  --color-surface-hover: #1a1a1a;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d4d4d4;
+  --color-text-muted: #8a8a8a;
+  
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+
+  /* Buttons */
+  --btn-primary-bg: #ffffff;
+  --btn-primary-text: #000000;
+  --btn-primary-hover-bg: #e5e5e5;
+
+  --btn-secondary-bg: rgba(255, 255, 255, 0.08);
+  --btn-secondary-text: #ffffff;
+  --btn-secondary-border: rgba(255, 255, 255, 0.22);
+  --btn-secondary-hover-bg: rgba(255, 255, 255, 0.14);
+  --btn-secondary-hover-border: rgba(255, 255, 255, 0.35);
+
+  /* Certifications section on white */
+  --cert-bg: #ffffff;
+  --cert-text-title: #111111;
+  --cert-text-sub: #666666;
+  --cert-icon-color: #222222;
+  --cert-border: #e5e5e5;
+
+  /* Typography */
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --nav-height: 76px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --transition: 0.18s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   Clean, realistic, dark background, crisp white logo & typography
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--color-header);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  z-index: 100;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.site-header.scrolled {
+  background: #0a0a0a;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  max-width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.01em;
+  padding: 6px 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text-primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Action Button */
+.nav-action {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* Static hover - NO pop-up transform */
+.btn-contact:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.menu-toggle .bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  border-radius: 2px;
+}
+
+/* Mobile Drawer */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.mobile-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  z-index: 160;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transition: right 0.25s ease-in-out;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.drawer-close {
+  color: var(--color-text-primary);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: auto;
+}
+
+.mobile-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mobile-link:hover,
+.mobile-link.active {
+  color: var(--color-text-primary);
+}
+
+.mobile-drawer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.btn-block {
+  width: 100%;
+  text-align: center;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   Full screen, neutral dark background, bottom-left corner alignment
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 60px 0 80px 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: brightness(0.62) contrast(1.15) grayscale(15%);
+}
+
+/* Pure neutral dark overlay (zero blue) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0.65) 45%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+/* Bottom-Left Container */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hero-content {
+  max-width: 720px;
+  text-align: left;
+}
+
+.hero-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.hero-subheading {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 620px;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+/* Two Action Buttons - STATIC HOVER (Zero Pop-ups) */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  transition: background-color var(--transition);
+}
+
+/* Static hover only */
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover-bg);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  backdrop-filter: blur(8px);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+/* Static hover only */
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover-bg);
+  border-color: var(--btn-secondary-hover-border);
+}
+
+/* ==========================================================================
+   CERTIFICATIONS SECTION (Under Hero)
+   Clean white background, moving list of logos, thin section
+   ========================================================================== */
+.certifications-section {
+  position: relative;
+  z-index: 10;
+  background-color: var(--cert-bg);
+  border-top: 1px solid var(--cert-border);
+  border-bottom: 1px solid var(--cert-border);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cert-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 36px;
+  border-right: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.cert-svg {
+  width: 26px;
+  height: 26px;
+  color: var(--cert-icon-color);
+  flex-shrink: 0;
+}
+
+.cert-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cert-text-title);
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.cert-subtitle {
+  font-size: 0.72rem;
+  color: var(--cert-text-sub);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 868px) {
+  .nav-links,
+  .nav-action .btn-contact {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .hero-heading {
+    font-size: 2.75rem;
+  }
+
+  .cert-item {
+    padding: 6px 24px;
+  }
+}
+
+@media (max-width: 540px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .hero-container {
+    padding: 0 20px;
+  }
+
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
