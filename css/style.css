@@ -20,10 +20,16 @@
   --color-border: rgba(255, 255, 255, 0.12);
   --color-border-subtle: rgba(255, 255, 255, 0.07);
 
+  /* Accent Color: Champion Gold */
+  --color-gold: #f59e0b;
+  --color-gold-hover: #fbbf24;
+  --color-gold-muted: rgba(245, 158, 11, 0.15);
+  --color-gold-border: rgba(245, 158, 11, 0.35);
+
   /* Buttons */
-  --btn-primary-bg: #ffffff;
+  --btn-primary-bg: #f59e0b;
   --btn-primary-text: #000000;
-  --btn-primary-hover-bg: #e5e5e5;
+  --btn-primary-hover-bg: #fbbf24;
 
   --btn-secondary-bg: rgba(255, 255, 255, 0.08);
   --btn-secondary-text: #ffffff;
@@ -172,7 +178,7 @@ button {
   left: 0;
   width: 0;
   height: 2px;
-  background: #ffffff;
+  background: var(--color-gold);
   transition: width var(--transition);
 }
 
@@ -205,9 +211,9 @@ button {
 
 /* Static hover - NO pop-up transform */
 .btn-contact:hover {
-  background-color: #ffffff;
+  background-color: var(--color-gold);
   color: #000000;
-  border-color: #ffffff;
+  border-color: var(--color-gold);
 }
 
 /* Mobile Toggle */
@@ -354,8 +360,12 @@ button {
 }
 
 .hero-content {
-  max-width: 680px;
+  max-width: 820px;
   text-align: left;
+}
+
+.text-gold {
+  color: var(--color-gold);
 }
 
 .hero-kicker-wrap {
@@ -368,7 +378,7 @@ button {
 .hero-kicker-line {
   width: 28px;
   height: 2px;
-  background-color: #ffffff;
+  background-color: var(--color-gold);
   display: inline-block;
 }
 
@@ -382,26 +392,26 @@ button {
 
 .hero-heading {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-size: clamp(2.4rem, 4.6vw, 3.85rem);
   font-weight: 700;
-  line-height: 1.04;
+  line-height: 1.08;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--color-text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.hero-heading-sub {
-  color: #e5e5e5;
+.heading-line {
   display: block;
+  white-space: nowrap;
 }
 
 .hero-subheading {
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.875rem, 1.05vw, 0.95rem);
   line-height: 1.65;
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin-bottom: 30px;
+  color: #a8a29e;
+  max-width: 520px;
+  margin-bottom: 28px;
   font-weight: 400;
 }
 
@@ -420,7 +430,7 @@ button {
   justify-content: center;
   padding: 13px 28px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.03em;
   border-radius: var(--radius-sm);
   background-color: var(--btn-primary-bg);
@@ -580,6 +590,10 @@ button {
 
   .hero-heading {
     font-size: 2.2rem;
+  }
+
+  .heading-line {
+    white-space: normal;
   }
 
   .hero-buttons {
