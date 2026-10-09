@@ -49,4 +49,62 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMenu();
     }
   });
+
+  // -------------------------------------------------------------------------
+  // FAQ ACCORDION
+  // -------------------------------------------------------------------------
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all open items first
+      faqItems.forEach(other => {
+        const otherBtn = other.querySelector('.faq-question');
+        const otherAns = other.querySelector('.faq-answer');
+        if (otherBtn && otherAns) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherAns.classList.remove('is-open');
+        }
+      });
+
+      // Toggle the clicked one
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.add('is-open');
+      }
+    });
+  });
+
+  // -------------------------------------------------------------------------
+  // ACTIVE NAV LINK SCROLL SPY
+  // -------------------------------------------------------------------------
+  const sections = document.querySelectorAll('section[id], div[id="home"]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const updateActiveLink = () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
 });
+
