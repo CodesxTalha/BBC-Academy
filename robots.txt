@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://codesxtalha.github.io/BBC-Academy/sitemap.xml
+Sitemap: https://bbcacademy.site/sitemap.xml

@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://codesxtalha.github.io/BBC-Academy/</loc>
+    <loc>https://bbcacademy.site/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://codesxtalha.github.io/BBC-Academy/assets/og-image.jpg</image:loc>
+      <image:loc>https://bbcacademy.site/assets/og-image.jpg</image:loc>
       <image:title>BBC Academy Martial Arts &amp; Combat Sports Training Center</image:title>
       <image:caption>BBC Academy - Shotokan Karate, Boxing, MMA, Kickboxing &amp; Gymnastics in Islamabad and Rawalpindi</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://codesxtalha.github.io/BBC-Academy/assets/proven-3.jpg</image:loc>
+      <image:loc>https://bbcacademy.site/assets/proven-3.jpg</image:loc>
       <image:title>BBC Academy Official Belt Grading &amp; Certificate Ceremony</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://codesxtalha.github.io/BBC-Academy/assets/proven-2.jpg</image:loc>
+      <image:loc>https://bbcacademy.site/assets/proven-2.jpg</image:loc>
       <image:title>BBC Academy Youth &amp; Junior Karate Team</image:title>
     </image:image>
   </url>

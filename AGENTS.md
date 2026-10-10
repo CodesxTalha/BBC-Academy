@@ -8,6 +8,7 @@
 ## Project Overview
 
 **Client:** BBC Academy
+**Domain:** https://bbcacademy.site
 **Type:** Mixed Martial Arts & Combat Sports Training Center
 **Location:** Twin Cities (Islamabad + Rawalpindi), Pakistan
 **Stack:** Pure HTML5 + Vanilla CSS + Vanilla JavaScript (no frameworks, no build tools)
