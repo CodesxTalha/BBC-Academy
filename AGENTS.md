@@ -146,8 +146,8 @@ Fonts imported from Google Fonts - already in <head>.
 ## Known Placeholders (User Must Update for Production)
 
 - Google Maps iframe src - uses approximate coordinates, replace with real embed codes from Google Maps
-- Phone number: +92 300 0000000 - placeholder, user must replace
-- WhatsApp link: https://wa.me/923000000000 - placeholder, user must replace
+- Phone number: +92 336 5279129 - Official Academy phone
+- WhatsApp link: https://wa.me/923365279129 - Official WhatsApp
 
 ---
 
