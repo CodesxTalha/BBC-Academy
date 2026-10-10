@@ -79,19 +79,19 @@ Fonts imported from Google Fonts - already in <head>.
 
 ## Sections Implemented (ALL COMPLETE)
 
-| Section              | ID          | Background                         |
-|----------------------|-------------|------------------------------------|
-| Navigation           | siteHeader  | rgba(10,10,10,0.92) / transparent  |
-| Hero                 | home        | Dark image overlay, content BL     |
-| Certifications Ticker| (in hero)   | #ffffff - white band               |
-| About                | about       | #0d0d0d                            |
-| Services             | services    | #000000                            |
-| Reviews              | reviews     | #0a0a0a                            |
-| Pricing              | pricing     | #f5f5f0 (light off-white)          |
-| FAQ                  | faq         | #000000                            |
-| Locations            | locations   | #0a0a0a                            |
-| CTA / Contact        | contact     | Dark green gradient #0f3d1f        |
-| Footer               | site-footer | #050505                            |
+| Section              | ID          | Description / Architecture                         |
+|----------------------|-------------|----------------------------------------------------|
+| Navigation           | siteHeader  | Desktop consultation pill / Mobile logo only      |
+| Hero                 | home        | Minimal dark hero, Contact Now + See Programs pills|
+| Certifications Ticker| (in hero)   | #ffffff white infinite moving band                 |
+| Proven Results       | about       | 3D Coverflow slider with real training photos      |
+| Our Programs         | programs    | 3D Coverflow slider with 2x2 combat badge cards    |
+| Class Timetable      | timetable   | Weekly class schedule, 60-30-10 color rules        |
+| Pick Your Plan       | pricing     | Wider, low-height membership cards                 |
+| FAQs                 | faq         | Simple direct accordion                            |
+| Training Locations   | locations   | Two large horizontal map cards                     |
+| CTA / Contact        | contact     | Direct Get Started with WhatsApp & phone           |
+| Footer               | site-footer | Direct clean brand, branches & contact links       |
 
 ---
 
@@ -129,6 +129,8 @@ Fonts imported from Google Fonts - already in <head>.
 - Header: Adds .scrolled class on scroll > 20px
 - Mobile Nav: Opens/closes drawer (#mobileDrawer) with backdrop (#mobileBackdrop)
 - FAQ Accordion: One-open-at-a-time, uses aria-expanded + .is-open class on .faq-answer
+- Timetable Tabs: Tab switcher for MWF, TTS, Morning, All classes
+- Mobile Programs Carousel: Shows 2 cards side-by-side on mobile, auto-scrolls horizontally every 3.6s, pauses on touch/drag, syncs pagination dots
 - Scroll Spy: Updates .active class on .nav-link based on scroll position
 
 ---
