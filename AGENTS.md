@@ -150,6 +150,13 @@ Fonts imported from Google Fonts - already in <head>.
 - Google Maps iframe src - uses approximate coordinates, replace with real embed codes from Google Maps
 - Phone number: +92 336 5279129 - Official Academy phone
 - WhatsApp link: https://wa.me/923365279129 - Official WhatsApp
+- Instagram: https://www.instagram.com/blackbeltcombatacademy
+- TikTok: https://www.tiktok.com/@hafizrizwan280
+- Facebook (Ghauri Town HQ):
+  - https://www.facebook.com/profile.php?id=61579444591007
+  - https://www.facebook.com/profile.php?id=61593659961635
+- Facebook (Airport Housing Society Branch):
+  - https://www.facebook.com/profile.php?id=61585668744479
 
 ---
 
@@ -163,4 +170,4 @@ Use descriptive commits:
 
 ---
 
-Last updated: All sections complete - Hero, About, Services, Reviews, Pricing, FAQ, Locations, CTA, Footer.
+Last updated: Added official social channels (Instagram, TikTok, Facebook pages for Ghauri Town & Airport Housing Society) to footer, locations, and Schema.org.
