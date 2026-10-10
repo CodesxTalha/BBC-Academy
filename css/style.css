@@ -949,6 +949,24 @@
             font-size: 1.0625rem;
             font-weight: 600;
             letter-spacing: -.01em;
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .slot-age {
+            display: inline-block;
+            padding: 2px 9px;
+            font-size: .75rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--accent);
+            background: rgba(245, 158, 11, .12);
+            border: 1px solid rgba(245, 158, 11, .35);
+            border-radius: 999px;
+            letter-spacing: .02em;
+            white-space: nowrap;
         }
 
         .slot-for {
