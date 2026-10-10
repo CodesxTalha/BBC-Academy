@@ -24,7 +24,7 @@
   <header class="site-header" id="siteHeader">
     <div class="nav-container">
       <!-- Brand -->
-      <a href="#" class="brand" aria-label="BBC Academy Home">
+      <a href="#home" class="brand" aria-label="BBC Academy Home">
         <img src="assets/logo-white.png" alt="BBC Academy Logo" class="brand-logo">
         <span class="brand-name">BBC Academy</span>
       </a>
@@ -33,13 +33,23 @@
       <nav class="nav-links" aria-label="Primary Navigation">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Services</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="#timetable" class="nav-link">Timetable</a>
         <a href="#reviews" class="nav-link">Reviews</a>
         <a href="#pricing" class="nav-link">Pricing</a>
       </nav>
 
-      <!-- Nav Action Button -->
+      <!-- Nav Action Area (Free Consultation widget + Rounded Contact Button) -->
       <div class="nav-action">
+        <a href="tel:+923365279129" class="nav-consultation" aria-label="Call for free consultation">
+          <svg class="nav-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12.4 19.79 19.79 0 0 1 1.81 3.8 2 2 0 0 1 3.78 1.6h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div class="nav-consultation-text">
+            <span class="nav-consultation-label">Free Consultation</span>
+            <span class="nav-consultation-number">+92 336 5279129</span>
+          </div>
+        </a>
         <a href="#contact" class="btn-contact">Contact Now</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
           <span class="bar"></span>
@@ -63,11 +73,18 @@
     <nav class="mobile-links">
       <a href="#home" class="mobile-link active">Home</a>
       <a href="#about" class="mobile-link">About</a>
-      <a href="#services" class="mobile-link">Services</a>
+      <a href="#programs" class="mobile-link">Programs</a>
+      <a href="#timetable" class="mobile-link">Timetable</a>
       <a href="#reviews" class="mobile-link">Reviews</a>
       <a href="#pricing" class="mobile-link">Pricing</a>
     </nav>
     <div class="mobile-drawer-bottom">
+      <a href="tel:+923365279129" class="mobile-consultation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12.4 19.79 19.79 0 0 1 1.81 3.8 2 2 0 0 1 3.78 1.6h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>+92 336 5279129</span>
+      </a>
       <a href="#contact" class="btn-contact btn-block">Contact Now</a>
     </div>
   </aside>
@@ -101,7 +118,7 @@
           </p>
           <div class="hero-buttons">
             <a href="#contact" class="btn-primary">Book a Free Class</a>
-            <a href="#services" class="btn-secondary">Our Disciplines</a>
+            <a href="#programs" class="btn-secondary">Our Programs</a>
           </div>
           <p class="hero-branches-note">Two Training Facilities &bull; Ghauri Town Phase 4A &bull; Airport Housing
             Society</p>
@@ -322,116 +339,548 @@
     </section>
 
     <!-- ==========================================================================
-         SERVICES SECTION — Dark background
-         Karate, Boxing, Kickboxing, MMA, Fitness & Weight Loss, Weapons & Katana
+         OUR PROGRAMS SECTION — Rebuilt to match design reference (Image 2)
+         2-column layout, pill metadata badges, authentic combat programs from user text
          ========================================================================== -->
-    <section class="services-section" id="services">
-      <div class="services-container">
+    <section class="programs-section" id="programs">
+      <div id="services"></div><!-- Anchor for backwards compatibility -->
+      <div class="programs-container">
+        <!-- Section Header (Design Reference: Kicker Slash + Split Heading / Description) -->
+        <div class="programs-header">
+          <div class="programs-header-left">
+            <div class="programs-kicker-wrap">
+              <span class="programs-kicker-slash text-gold">/</span>
+              <span class="programs-kicker">OUR PROGRAMS</span>
+            </div>
+            <h2 class="programs-heading">FIND YOUR <span class="text-gold">PERFECT FIT.</span></h2>
+          </div>
+          <div class="programs-header-right">
+            <p class="programs-subtext">
+              There is no age limit. We have sessions available for every age group. We offer karate classes for kids (boys and girls), and for adults we provide mixed martial arts, fitness, and self-defense training.
+            </p>
+          </div>
+        </div>
+
+        <!-- Programs Grid (2-Column Card Grid matching Image 2 with Pill Badges) -->
+        <div class="programs-grid">
+          <!-- Program 1: Karate -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">KARATE</h3>
+            <p class="program-card-desc">
+              Traditional Shotokan and Olympic-style Karate for all ages — kids (boys and girls) and adults. Master Kihon fundamentals, traditional Kata forms, and full-contact Kumite sparring under WKF-certified instruction with official Dan belt gradings.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                KIDS &amp; ADULTS &bull; ALL AGES
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                60 MIN / SESSION
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                MON &mdash; SAT AFTERNOONS
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                WKF BELT GRADING
+              </span>
+            </div>
+          </div>
+
+          <!-- Program 2: Boxing -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.93 4.93 14.14 14.14"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">BOXING</h3>
+            <p class="program-card-desc">
+              Precision punch mechanics, evasive head movement, footwork, and aggressive counter-striking combinations. Covers foundational pad drills, heavy bag power conditioning, and technical ring sparring with dedicated female and male tracks.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                BEGINNER TO PRO
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                60 &ndash; 90 MIN / SESSION
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                GIRLS &amp; OPEN SESSIONS
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                TECHNICAL PAD WORK
+              </span>
+            </div>
+          </div>
+
+          <!-- Program 3: Kickboxing -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">KICKBOXING</h3>
+            <p class="program-card-desc">
+              Dutch and American kickboxing systems trained under WAKO-certified methodology. High-volume combinations synchronizing rapid hand combinations with low kicks, body roundhouses, and clinch knees across Senior and Junior / New divisions.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                JUNIOR &amp; SENIOR DIVISIONS
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                75 &ndash; 90 MIN / SESSION
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                MON &bull; WED &bull; FRI (6 &ndash; 9 PM)
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                WAKO CERTIFIED
+              </span>
+            </div>
+          </div>
+
+          <!-- Program 4: Mixed Martial Arts (MMA) -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">MIXED MARTIAL ARTS (MMA)</h3>
+            <p class="program-card-desc">
+              Our flagship combat discipline. Seamlessly blends stand-up striking, clinch takedowns, cage wrestling, and ground submissions under international IMMAF standards. Designed for real-world self-defense and amateur or pro fight readiness.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                FLAGSHIP COMBAT SYSTEM
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                90 MIN / SESSION
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                MON &bull; WED &bull; FRI (7:30 PM)
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                IMMAF COMPLIANT
+              </span>
+            </div>
+          </div>
+
+          <!-- Program 5: Fitness & Weight Loss Training -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 4h12v4H6z"/>
+                <path d="M4 8h16v4H4z"/>
+                <path d="M8 12h8v8H8z"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">FITNESS &amp; WEIGHT LOSS TRAINING</h3>
+            <p class="program-card-desc">
+              High-intensity combat metabolic conditioning designed to torch calories, shed fat, and forge functional stamina. Incorporates bag circuits, bodyweight calisthenics, and core complexes with separate dedicated female and male fitness class slots.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                HIIT &amp; WEIGHT LOSS
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                60 MIN / SESSION
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                FEMALE &amp; MALE SLOTS
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                ALL FITNESS LEVELS
+              </span>
+            </div>
+          </div>
+
+          <!-- Program 6: Sword Training (Katana) & Other Weapons -->
+          <div class="program-card">
+            <div class="program-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m14.5 9.5 5 5-11 11-5-5 11-11Z"/>
+                <path d="m18 6 3 3"/>
+                <path d="m16 4 4 4"/>
+              </svg>
+            </div>
+            <h3 class="program-card-title">SWORD TRAINING (KATANA) &amp; OTHER WEAPONS</h3>
+            <p class="program-card-desc">
+              Traditional Japanese Kenjutsu blade mastery, Katana handling, solar weapons defense, tactical disarming, and multi-weapon disciplines. A rare and revered martial discipline in Pakistan taught with strict safety protocols and elite focus.
+            </p>
+            <div class="program-card-pills">
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 9.5 5 5-11 11-5-5 11-11Z"/><path d="m18 6 3 3"/></svg>
+                TRADITIONAL KENJUTSU
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                60 &ndash; 90 MIN
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                WEAPONS DISARMING
+              </span>
+              <span class="program-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                RARE IN PAKISTAN
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRAINING TIMETABLE SECTION — Ghouri Town Branch
+         Exact schedule from user text. Clean tabs, modern schedule cards, zero emojis.
+         ========================================================================== -->
+    <section class="timetable-section" id="timetable">
+      <div class="timetable-container">
+        <!-- Section Header -->
         <div class="section-header">
           <div class="section-kicker-wrap">
             <span class="kicker-line"></span>
-            <span class="section-kicker">What We Teach</span>
+            <span class="section-kicker">Ghouri Town Branch &bull; Training Timetable</span>
           </div>
-          <h2 class="section-heading">Combat Disciplines &amp; Training Programs</h2>
-          <p class="section-subtext">Every program is structured, coach-led, and built around real results — whether your goal is self-defense, competition, or physical transformation.</p>
+          <h2 class="section-heading">Weekly Class Schedule</h2>
+          <p class="section-subtext">Structured daily classes across all age divisions. Certified black belt coaches on the mats for every session.</p>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <!-- Timetable Filter Tabs (Rounded Pill Buttons) -->
+        <div class="timetable-tabs">
+          <button class="tt-tab-btn active" data-target="tt-mwf">Monday &bull; Wednesday &bull; Friday</button>
+          <button class="tt-tab-btn" data-target="tt-tts">Tuesday &bull; Thursday &bull; Saturday</button>
+          <button class="tt-tab-btn" data-target="tt-morning">Morning Classes (Mon&ndash;Fri)</button>
+          <button class="tt-tab-btn" data-target="tt-all">All Classes</button>
+        </div>
+
+        <!-- Schedule Panels -->
+        <div class="timetable-panels">
+          <!-- Panel 1: Mon / Wed / Fri -->
+          <div class="tt-panel active" id="tt-mwf">
+            <div class="schedule-grid">
+              <div class="schedule-card">
+                <div class="schedule-time">10:30 AM &ndash; 2:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Classes (4 Sessions)</h4>
+                  <p class="schedule-sub">10:30&ndash;11:30 &bull; 11:30&ndash;12:30 &bull; 12:30&ndash;1:30 &bull; 1:30&ndash;2:30</p>
+                </div>
+                <span class="schedule-badge">All Levels</span>
               </div>
-              <span class="service-level">Beginner — Advanced</span>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">1:30 PM &ndash; 2:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Female Fitness &amp; Self-Defense</h4>
+                  <p class="schedule-sub">Dedicated women-only conditioning &amp; practical safety</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Women Only</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">3:00 PM &ndash; 4:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Advance Kids Karate</h4>
+                  <p class="schedule-sub">Competition kata, advanced kumite drills &amp; belt mastery</p>
+                </div>
+                <span class="schedule-badge">Advance Youth</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">4:00 PM &ndash; 5:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kids Karate</h4>
+                  <p class="schedule-sub">Foundations, discipline &amp; motor skills for boys and girls</p>
+                </div>
+                <span class="schedule-badge">Boys &amp; Girls</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">5:00 PM &ndash; 6:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Youth Karate</h4>
+                  <p class="schedule-sub">Teen martial arts development, forms &amp; kumite sparring</p>
+                </div>
+                <span class="schedule-badge">Youth Division</span>
+              </div>
+
+              <div class="schedule-card schedule-card--gold">
+                <div class="schedule-time">6:00 PM &ndash; 7:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kickboxing &mdash; Senior Class</h4>
+                  <p class="schedule-sub">Full-contact pad drills, heavy bag work &amp; technical sparring</p>
+                </div>
+                <span class="schedule-badge schedule-badge--gold">Senior Fighters</span>
+              </div>
+
+              <div class="schedule-card schedule-card--gold">
+                <div class="schedule-time">7:30 PM &ndash; 9:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kickboxing &amp; MMA &mdash; Junior / New Class</h4>
+                  <p class="schedule-sub">Striking fundamentals, octagon movement &amp; beginner fight camp</p>
+                </div>
+                <span class="schedule-badge schedule-badge--gold">Junior / New</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">9:00 PM &ndash; 10:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Fitness Class &mdash; Male</h4>
+                  <p class="schedule-sub">High-intensity metabolic conditioning, core &amp; strength circuits</p>
+                </div>
+                <span class="schedule-badge">Male Adults</span>
+              </div>
             </div>
-            <h3 class="service-name">Karate</h3>
-            <p class="service-desc">Traditional Shotokan and Olympic-style Karate. Kihon fundamentals, Kata forms, and full-contact Kumite sparring under WKF-certified instruction.</p>
-            <ul class="service-highlights">
-              <li>Official Dan Belt Grading</li>
-              <li>WKF Ruleset Kumite</li>
-              <li>Traditional Kata Forms</li>
-            </ul>
           </div>
 
-          <div class="service-card">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+          <!-- Panel 2: Tue / Thu / Sat -->
+          <div class="tt-panel" id="tt-tts">
+            <div class="schedule-grid">
+              <div class="schedule-card">
+                <div class="schedule-time">10:30 AM &ndash; 2:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Classes (Monday to Friday)</h4>
+                  <p class="schedule-sub">Flexible open training slots for students and professionals</p>
+                </div>
+                <span class="schedule-badge">Open Slots</span>
               </div>
-              <span class="service-level">Beginner — Pro</span>
+
+              <div class="schedule-card">
+                <div class="schedule-time">3:00 PM &ndash; 4:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Advance Kids Karate</h4>
+                  <p class="schedule-sub">Kata precision, sparring strategy &amp; championship coaching</p>
+                </div>
+                <span class="schedule-badge">Advance Youth</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">4:00 PM &ndash; 5:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls &amp; Kids Karate</h4>
+                  <p class="schedule-sub">Fundamentals, discipline &amp; coordination for girls &amp; kids</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls &amp; Kids</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">5:00 PM &ndash; 6:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls Youth Karate</h4>
+                  <p class="schedule-sub">Teen female karate curriculum, belt grading &amp; self-defense</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls Youth</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">6:30 PM &ndash; 8:00 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Adult Girls Karate &amp; Self-Defense</h4>
+                  <p class="schedule-sub">Practical street defense, situational awareness &amp; traditional forms</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Women &amp; Adults</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">8:00 PM &ndash; 9:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls Boxing</h4>
+                  <p class="schedule-sub">Technical punch mechanics, footwork, speed bag &amp; conditioning</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls Boxing</span>
+              </div>
             </div>
-            <h3 class="service-name">Boxing</h3>
-            <p class="service-desc">Precision striking, defensive footwork, combination drilling, and sparring. From fundamentals for beginners to pro-level corner preparation.</p>
-            <ul class="service-highlights">
-              <li>Technical Pad Work</li>
-              <li>Heavy Bag Conditioning</li>
-              <li>Regulated Sparring</li>
-            </ul>
           </div>
 
-          <div class="service-card service-card--featured">
-            <div class="service-card-top">
-              <div class="service-icon-box service-icon-box--gold">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <!-- Panel 3: Morning Classes -->
+          <div class="tt-panel" id="tt-morning">
+            <div class="schedule-grid">
+              <div class="schedule-card">
+                <div class="schedule-time">10:30 AM &ndash; 11:30 AM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Combat &mdash; Slot 1</h4>
+                  <p class="schedule-sub">Monday to Friday &bull; Pad work, mobility &amp; technique</p>
+                </div>
+                <span class="schedule-badge">Morning</span>
               </div>
-              <span class="service-level service-level--gold">All Levels — Flagship</span>
+
+              <div class="schedule-card">
+                <div class="schedule-time">11:30 AM &ndash; 12:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Combat &mdash; Slot 2</h4>
+                  <p class="schedule-sub">Monday to Friday &bull; Strike conditioning &amp; technical fundamentals</p>
+                </div>
+                <span class="schedule-badge">Morning</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">12:30 PM &ndash; 1:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Combat &mdash; Slot 3</h4>
+                  <p class="schedule-sub">Monday to Friday &bull; Fighter conditioning &amp; sparring drills</p>
+                </div>
+                <span class="schedule-badge">Morning</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">1:30 PM &ndash; 2:30 PM</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Female Fitness &amp; Self-Defense</h4>
+                  <p class="schedule-sub">Monday to Friday &bull; Female-only training &amp; athletic toning</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Women Only</span>
+              </div>
             </div>
-            <h3 class="service-name">Mixed Martial Arts</h3>
-            <p class="service-desc">The complete combat system. Striking, clinch, takedowns, ground control, and submissions — trained under IMMAF-compliant methodology for real cage readiness.</p>
-            <ul class="service-highlights">
-              <li>Striking &amp; Clinch Integration</li>
-              <li>Takedown &amp; Wrestling</li>
-              <li>Ground Game &amp; Submissions</li>
-            </ul>
           </div>
 
-          <div class="service-card">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <!-- Panel 4: All Classes Combined -->
+          <div class="tt-panel" id="tt-all">
+            <div class="schedule-grid">
+              <div class="schedule-card">
+                <div class="schedule-time">10:30 AM &ndash; 2:30 PM (M&ndash;F)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Morning Classes (4 Daily Slots)</h4>
+                  <p class="schedule-sub">Open coaching slots &bull; All age groups &bull; Mon to Fri</p>
+                </div>
+                <span class="schedule-badge">Morning M&ndash;F</span>
               </div>
-              <span class="service-level">Beginner — Advanced</span>
-            </div>
-            <h3 class="service-name">Kickboxing</h3>
-            <p class="service-desc">Dutch and American kickboxing systems. High-volume combination training with kicks, knees, and punches. WAKO certified coaching and competitive pathway.</p>
-            <ul class="service-highlights">
-              <li>Dutch Kickboxing Drills</li>
-              <li>Low Kick &amp; Knee Techniques</li>
-              <li>WAKO Competitive Rules</li>
-            </ul>
-          </div>
 
-          <div class="service-card">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v4H6z"/><path d="M4 8h16v4H4z"/><path d="M8 12h8v8H8z"/></svg>
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">1:30 PM &ndash; 2:30 PM (M&ndash;F)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Female Fitness &amp; Self-Defense</h4>
+                  <p class="schedule-sub">Dedicated female coaching &bull; Conditioning &amp; street defense</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Women Only</span>
               </div>
-              <span class="service-level">All Levels</span>
-            </div>
-            <h3 class="service-name">Fitness &amp; Fat Loss</h3>
-            <p class="service-desc">Combat-based metabolic conditioning designed to burn fat and build functional athletic strength. High-intensity circuits, bag work, and movement drills in a structured class format.</p>
-            <ul class="service-highlights">
-              <li>HIIT Combat Circuits</li>
-              <li>Body Composition Focus</li>
-              <li>No Experience Required</li>
-            </ul>
-          </div>
 
-          <div class="service-card">
-            <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 9.5 5 5-11 11-5-5 11-11Z"/><path d="m18 6 3 3"/><path d="m16 4 4 4"/></svg>
+              <div class="schedule-card">
+                <div class="schedule-time">3:00 PM &ndash; 4:00 PM (M&ndash;S)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Advance Kids Karate</h4>
+                  <p class="schedule-sub">6 days a week &bull; Tournament preparation &amp; black belt progression</p>
+                </div>
+                <span class="schedule-badge">Advance Youth</span>
               </div>
-              <span class="service-level">Intermediate — Advanced</span>
+
+              <div class="schedule-card">
+                <div class="schedule-time">4:00 PM &ndash; 5:00 PM (MWF)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kids Karate</h4>
+                  <p class="schedule-sub">Monday, Wednesday, Friday &bull; Boys &amp; girls foundational karate</p>
+                </div>
+                <span class="schedule-badge">Boys &amp; Girls</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">4:00 PM &ndash; 5:00 PM (TTS)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls &amp; Kids Karate</h4>
+                  <p class="schedule-sub">Tuesday, Thursday, Saturday &bull; Girls &amp; younger kids</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls &amp; Kids</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">5:00 PM &ndash; 6:00 PM (MWF)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Youth Karate</h4>
+                  <p class="schedule-sub">Monday, Wednesday, Friday &bull; Teen division martial arts</p>
+                </div>
+                <span class="schedule-badge">Youth Karate</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">5:00 PM &ndash; 6:30 PM (TTS)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls Youth Karate</h4>
+                  <p class="schedule-sub">Tuesday, Thursday, Saturday &bull; Teen girls karate &amp; kumite</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls Youth</span>
+              </div>
+
+              <div class="schedule-card schedule-card--gold">
+                <div class="schedule-time">6:00 PM &ndash; 7:30 PM (MWF)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kickboxing &mdash; Senior Class</h4>
+                  <p class="schedule-sub">Monday, Wednesday, Friday &bull; Full-contact fight team</p>
+                </div>
+                <span class="schedule-badge schedule-badge--gold">Senior Fight Class</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">6:30 PM &ndash; 8:00 PM (TTS)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Adult Girls Karate &amp; Self-Defense</h4>
+                  <p class="schedule-sub">Tuesday, Thursday, Saturday &bull; Traditional karate &amp; modern defense</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Women Adults</span>
+              </div>
+
+              <div class="schedule-card schedule-card--gold">
+                <div class="schedule-time">7:30 PM &ndash; 9:00 PM (MWF)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Kickboxing &amp; MMA &mdash; Junior / New Class</h4>
+                  <p class="schedule-sub">Monday, Wednesday, Friday &bull; Striking &amp; MMA basics</p>
+                </div>
+                <span class="schedule-badge schedule-badge--gold">Junior / New MMA</span>
+              </div>
+
+              <div class="schedule-card schedule-card--female">
+                <div class="schedule-time">8:00 PM &ndash; 9:30 PM (TTS)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Girls Boxing</h4>
+                  <p class="schedule-sub">Tuesday, Thursday, Saturday &bull; Technical boxing &amp; speed work</p>
+                </div>
+                <span class="schedule-badge schedule-badge--female">Girls Boxing</span>
+              </div>
+
+              <div class="schedule-card">
+                <div class="schedule-time">9:00 PM &ndash; 10:00 PM (MWF)</div>
+                <div class="schedule-details">
+                  <h4 class="schedule-title">Fitness Class &mdash; Male</h4>
+                  <p class="schedule-sub">Monday, Wednesday, Friday &bull; Combat conditioning &amp; HIIT</p>
+                </div>
+                <span class="schedule-badge">Male Fitness</span>
+              </div>
             </div>
-            <h3 class="service-name">Katana &amp; Weapons</h3>
-            <p class="service-desc">Traditional Japanese Kenjutsu blade control, Katana handling, solar weapons defense, disarming techniques, and multi-weapon discipline training. Rare in Pakistan.</p>
-            <ul class="service-highlights">
-              <li>Traditional Kenjutsu</li>
-              <li>Weapons Disarming</li>
-              <li>Solar Defense Training</li>
-            </ul>
           </div>
+        </div>
+
+        <!-- Timetable Motto Banner (From user prompt) -->
+        <div class="timetable-motto-banner">
+          <div class="motto-content">
+            <span class="motto-tagline">TRAIN HARD &bull; STAY DISCIPLINED &bull; BECOME UNSTOPPABLE</span>
+            <span class="motto-sub">Black Belt Combat Academy &mdash; Ghouri Town Branch</span>
+          </div>
+          <a href="#contact" class="btn-primary">Book Your Free Class</a>
         </div>
       </div>
     </section>
@@ -830,7 +1279,8 @@
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Disciplines</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#timetable">Timetable</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQs</a></li>

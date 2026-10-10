@@ -83,6 +83,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------------------
+  // TIMETABLE TAB SWITCHER
+  // -------------------------------------------------------------------------
+  const ttTabs = document.querySelectorAll('.tt-tab-btn');
+  const ttPanels = document.querySelectorAll('.tt-panel');
+
+  ttTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-target');
+
+      ttTabs.forEach(t => t.classList.remove('active'));
+      ttPanels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+
+  // -------------------------------------------------------------------------
   // ACTIVE NAV LINK SCROLL SPY
   // -------------------------------------------------------------------------
   const sections = document.querySelectorAll('section[id], div[id="home"]');
@@ -91,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateActiveLink = () => {
     let current = '';
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 140;
       if (window.scrollY >= sectionTop) {
         current = section.getAttribute('id');
       }
