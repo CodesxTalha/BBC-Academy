@@ -1,0 +1,6 @@
+# Robots.txt for BBC Academy (Islamabad & Rawalpindi)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://codesxtalha.github.io/BBC-Academy/sitemap.xml
