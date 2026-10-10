@@ -364,14 +364,18 @@ button {
   position: fixed;
   top: 0;
   right: 0;
-  width: min(85vw, 340px);
+  width: min(85vw, 320px);
   height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
   background: #0d0d0d;
   border-left: 1px solid var(--color-border);
   z-index: 1200;
-  padding: 24px 20px;
+  padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateX(100%);
   transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1);
 }
@@ -384,9 +388,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-border-subtle);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .drawer-close {
@@ -398,18 +403,18 @@ button {
 .mobile-links {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   margin-bottom: auto;
 }
 
 .mobile-link {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -419,11 +424,14 @@ button {
 }
 
 .mobile-drawer-bottom {
-  padding-top: 20px;
+  margin-top: auto;
+  padding-top: 14px;
+  padding-bottom: 8px;
   border-top: 1px solid var(--color-border-subtle);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .mobile-consultation {
@@ -507,6 +515,26 @@ button {
   text-align: left;
 }
 
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
 .hero-heading {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5.2vw, 4.2rem);
@@ -531,6 +559,16 @@ button {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.hero-tagline-strip {
+  margin-top: 28px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #888888;
+  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
@@ -1077,9 +1115,9 @@ button {
 
 .pricing-grid-wide {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 1100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
@@ -1087,11 +1125,11 @@ button {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 34px 30px;
+  padding: 30px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 22px;
+  gap: 20px;
   position: relative;
   transition: border-color var(--transition);
 }
@@ -1099,6 +1137,11 @@ button {
 .pricing-wide-card--featured {
   border-color: var(--color-gold-border);
   background: linear-gradient(145deg, #161208 0%, var(--color-surface) 100%);
+}
+
+.pricing-wide-card--annual {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: linear-gradient(145deg, #1b1509 0%, var(--color-surface) 100%);
 }
 
 .pricing-deal-tag {
@@ -1154,6 +1197,17 @@ button {
 .pricing-wide-price-box {
   text-align: right;
   flex-shrink: 0;
+}
+
+.price-original {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #777777;
+  text-decoration: line-through;
+  line-height: 1.2;
+  margin-bottom: 2px;
 }
 
 .price-val {
@@ -1384,10 +1438,15 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .location-big-header {
   padding: 24px 24px 18px 24px;
+  min-height: 114px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .location-big-badge {
@@ -1430,6 +1489,7 @@ button {
   width: 100%;
   height: 240px;
   background: #181818;
+  flex-grow: 1;
 }
 
 .location-big-map {
@@ -1445,6 +1505,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .btn-directions {
@@ -1698,27 +1759,75 @@ button {
 
 @media (max-width: 768px) {
   :root {
-    --nav-height: 66px;
+    --nav-height: 64px;
   }
 
+  /* Global Side Padding on Mobile across all sections */
+  .nav-container,
+  .hero-container,
+  .proven-container,
+  .programs-coverflow-container,
+  .timetable-container,
+  .pricing-container,
+  .faq-container,
+  .locations-container,
+  .cta-direct-container,
+  .footer-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Section Spacing on Mobile */
+  .section-title-wrap {
+    margin-bottom: 28px;
+  }
+
+  .section-subtext-centered {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  /* Hero Section on Mobile */
   .hero-section {
-    min-height: calc(100svh - 66px);
-    padding: calc(var(--nav-height) + 20px) 0 40px 0;
+    min-height: calc(100svh - 64px);
+    padding: calc(var(--nav-height) + 16px) 0 32px 0;
   }
 
-  .hero-container {
-    padding: 0 20px;
+  .hero-bg-img {
+    object-position: center 25%;
+    filter: contrast(1.15) brightness(0.92);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.68) 50%,
+      rgba(0, 0, 0, 0.94) 100%
+    );
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .eyebrow-line {
+    width: 18px;
   }
 
   .hero-heading {
-    font-size: clamp(2rem, 7.8vw, 2.75rem);
+    font-size: clamp(1.9rem, 7.6vw, 2.6rem);
     line-height: 1.1;
+    margin-bottom: 14px;
   }
 
   .hero-subheading {
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     line-height: 1.55;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
+    max-width: 100%;
   }
 
   /* Compact Sleek Hero Buttons on Mobile */
@@ -1733,79 +1842,125 @@ button {
   .hero-buttons .btn-primary,
   .hero-buttons .btn-secondary {
     width: 100%;
-    padding: 10px 14px;
+    padding: 10px 12px;
     font-size: 0.74rem;
     min-height: 42px;
     text-align: center;
     box-sizing: border-box;
+    white-space: nowrap;
   }
 
-  /* Coverflow on mobile */
+  .hero-tagline-strip {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin-top: 18px;
+  }
+
+  /* Proven Results Coverflow on Mobile */
   .coverflow-stage {
-    height: 280px;
+    height: 320px;
   }
 
   .coverflow-card {
-    width: 86%;
+    width: 94%;
   }
 
   .coverflow-card.is-prev {
-    transform: translateX(calc(-50% - 140px)) scale(0.8);
-    opacity: 0.4;
+    transform: translateX(calc(-50% - 130px)) scale(0.82);
+    opacity: 0.35;
   }
 
   .coverflow-card.is-next {
-    transform: translateX(calc(-50% + 140px)) scale(0.8);
-    opacity: 0.4;
+    transform: translateX(calc(-50% + 130px)) scale(0.82);
+    opacity: 0.35;
   }
 
-  /* Programs flow on mobile */
+  .coverflow-arrow {
+    width: 36px;
+    height: 36px;
+    background: rgba(14, 14, 14, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .coverflow-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .coverflow-prev {
+    left: 4px;
+  }
+
+  .coverflow-next {
+    right: 4px;
+  }
+
+  /* Programs Coverflow on Mobile */
   .programs-flow-stage {
-    height: 360px;
+    height: 385px;
   }
 
   .program-flow-card {
-    width: 90%;
-    padding: 24px 20px;
+    width: 92%;
+    padding: 20px 16px;
   }
 
   .program-flow-title {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 6px;
   }
 
   .program-flow-desc {
     font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 14px;
+    line-height: 1.45;
+    margin-bottom: 10px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
   .program-flow-pills {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6px;
-    padding-top: 12px;
+    padding-top: 10px;
   }
 
   .p-pill {
-    padding: 5px 8px;
-    font-size: 9px;
+    padding: 5px 6px;
+    font-size: 9.5px;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    line-height: 1.2;
+  }
+
+  .p-pill svg {
+    width: 11px;
+    height: 11px;
   }
 
   .program-flow-card.is-prev {
-    transform: translateX(calc(-50% - 120px)) scale(0.8);
-    opacity: 0.35;
+    transform: translateX(calc(-50% - 110px)) scale(0.82);
+    opacity: 0.3;
   }
 
   .program-flow-card.is-next {
-    transform: translateX(calc(-50% + 120px)) scale(0.8);
-    opacity: 0.35;
+    transform: translateX(calc(-50% + 110px)) scale(0.82);
+    opacity: 0.3;
   }
 
-  /* Timetable tabs scroll */
+  .programs-flow-wrap .coverflow-prev {
+    left: 4px;
+  }
+
+  .programs-flow-wrap .coverflow-next {
+    right: 4px;
+  }
+
+  /* Timetable Tabs & Card Flex-wrap on Mobile (Fixing Off-Screen Badge) */
   .timetable-tabs {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -1813,6 +1968,8 @@ button {
     padding-bottom: 6px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    margin-bottom: 24px;
   }
 
   .timetable-tabs::-webkit-scrollbar {
@@ -1821,6 +1978,50 @@ button {
 
   .tt-tab-btn {
     flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .schedule-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 14px 14px;
+    gap: 8px;
+  }
+
+  .schedule-time {
+    order: 1;
+    font-size: 11.5px;
+    padding: 4px 10px;
+    flex-shrink: 0;
+  }
+
+  .schedule-badge {
+    order: 2;
+    margin-left: auto;
+    font-size: 9.5px;
+    padding: 3px 8px;
+    flex-shrink: 0;
+  }
+
+  .schedule-details {
+    order: 3;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .schedule-title {
+    font-size: 14px;
+  }
+
+  .schedule-sub {
+    font-size: 11.5px;
   }
 
   /* Pricing features */
