@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://bbcacademy.website/sitemap.xml
+Sitemap: https://bbcombatacadmey.site/sitemap.xml
