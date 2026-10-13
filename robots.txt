@@ -1,4 +1,26 @@
-# Robots.txt for BBC Academy (Islamabad & Rawalpindi)
+# Robots.txt for BBC Academy (Black Belt Combat Academy)
+# Class 1: Search & AI Citation Engines (Explicitly Allowed)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: *
 Allow: /
 
